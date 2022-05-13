@@ -18,7 +18,6 @@ const Reviews = ({ name, img, review, city }) => {
                         <p>{city}</p>
                     </div>
                 </div>
-
             </div>
         </div>
     );
