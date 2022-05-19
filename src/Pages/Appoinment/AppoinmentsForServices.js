@@ -1,5 +1,5 @@
 import React from 'react';
-import CommonBtn from '../Shared/CommonBtn';
+
 
 const AppoinmentsForServices = ({ service, setTreatment }) => {
     const { name, slot } = service;
