@@ -14,6 +14,7 @@ import MyReview from "./Pages/Dashboard/MyReview";
 import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import AddDoctor from "./Pages/Dashboard/AddDoctor";
+import ManageDoctors from "./Pages/Dashboard/ManageDoctors";
 
 
 
@@ -44,6 +45,10 @@ function App() {
 
           <Route path="addDoctor" element={<RequireAdmin>
             <AddDoctor></AddDoctor>
+          </RequireAdmin>}></Route>
+
+          <Route path="manageDoctors" element={<RequireAdmin>
+            <ManageDoctors></ManageDoctors>
           </RequireAdmin>}></Route>
 
         </Route>

@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 
 const AddDoctor = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const { data: services, isLoading } = useQuery('/services', () => fetch("http://localhost:5000/services").then(res => res.json()));
-    const [doctors, setDoctors] = useState([]);
-
 
     const imgStorageKey = 'ba174ce3bc57048f9cd66363c4b7ddfe';
 
@@ -56,7 +53,7 @@ const AddDoctor = () => {
                             if (data) {
                                 toast("Doctor added successfully");
                                 reset();
-                                setDoctors(data)
+
                             }
                             else {
                                 toast.error("Failed to add Doctor");
