@@ -12,7 +12,7 @@ const MyAppoinments = () => {
     const email = user.email;
     const navigate = useNavigate();
 
-    const { data: myAppoinments, isLoading, error } = useQuery('myAppoinments', () => fetch(`https://doctors-portal-server-rmr.herokuapp.com/myAppoinments?email=${email}`, {
+    const { data: myAppoinments, isLoading, error } = useQuery('myAppoinments', () => fetch(`https://doctors-portal-rmr.herokuapp.com/myAppoinments?email=${email}`, {
         method: 'GET',
         headers: {
             "authorization": `Bearer ${localStorage.getItem('accessToken')}`

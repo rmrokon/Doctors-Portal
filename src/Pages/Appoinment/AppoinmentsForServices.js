@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const AppoinmentsForServices = ({ service, setTreatment }) => {
-    const { name, slot } = service;
+    const { name, slots } = service;
 
     // const handleAppoinment = () => {
     //     console.log("Clicled");
@@ -13,14 +13,14 @@ const AppoinmentsForServices = ({ service, setTreatment }) => {
                 <h2 className="card-title">{name}</h2>
                 <p>
                     {
-                        slot.length ? <span>{slot[0]}</span> : <span className='text-red-400'>No slot available. Try Another Date</span>
+                        slots.length ? <span>{slots[0]}</span> : <span className='text-red-400'>No slot available. Try Another Date</span>
                     }
                 </p>
-                <p>Space Available: {slot.length}</p>
+                <p>Space Available: {slots.length}</p>
                 <label
                     className='btn btn-primary text-white font-bold bg-gradient-to-r from-secondary to-primary'
                     onClick={() => setTreatment(service)}
-                    disabled={!slot.length}
+                    disabled={!slots.length}
                     htmlFor="booking-modal">Book Appoinment</label>
             </div>
         </div>

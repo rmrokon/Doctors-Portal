@@ -7,7 +7,7 @@ import UserRow from './UserRow';
 const Users = () => {
 
     const { data: users, isLoading, error, refetch } = useQuery('allusers', () =>
-        fetch("https://doctors-portal-server-rmr.herokuapp.com/users", {
+        fetch("https://doctors-portal-rmr.herokuapp.com/users", {
             method: "GET",
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,7 +23,7 @@ const Users = () => {
     return (
         <div>
             {error && <p>{error.message}</p>}
-            <h3>All Users: {users.length}</h3>
+            <h3>All Users: {users?.length}</h3>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 
