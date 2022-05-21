@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 
 const BookingModal = ({ treatment, selected, setTreatment, refetch }) => {
-    const { name, slots, _id } = treatment;
+    const { name, slots, price } = treatment;
     const [user, loading] = useAuthState(auth);
     const formattedDate = format(selected, 'PP');
 
@@ -22,7 +22,7 @@ const BookingModal = ({ treatment, selected, setTreatment, refetch }) => {
         const slot = e.target.slot.value;
         const phone = e.target.phone.value;
 
-        const booking = { name, date, slot, patientName, phone, email };
+        const booking = { name, date, slot, patientName, phone, email, price };
         fetch("https://doctors-portal-rmr.herokuapp.com/bookings", {
             method: 'POST',
             headers: {

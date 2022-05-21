@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const AppoinmentsForServices = ({ service, setTreatment }) => {
-    const { name, slots } = service;
+    const { name, slots, price } = service;
 
     // const handleAppoinment = () => {
     //     console.log("Clicled");
@@ -17,6 +17,7 @@ const AppoinmentsForServices = ({ service, setTreatment }) => {
                     }
                 </p>
                 <p>Space Available: {slots.length}</p>
+                <p>Price: ${price}</p>
                 <label
                     className='btn btn-primary text-white font-bold bg-gradient-to-r from-secondary to-primary'
                     onClick={() => setTreatment(service)}
